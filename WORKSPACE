@@ -8,6 +8,13 @@ git_repository(
     shallow_since = "1570114335 -0400",
 )
 
+http_archive(
+    name = "clp",
+    build_file = "//bazel:clp.BUILD",
+    urls = ["https://www.coin-or.org/download/source/Clp/Clp-1.17.5.tgz"],
+    sha256 = "49a9f917002b8db9df4df549119b0d44ec5a2f321b08f610dcc53be72879bc78",
+)
+
 git_repository(
     name = "com_github_nelhage_rules_boost",
     commit = "9f9fb8b2f0213989247c9d5c0e814a8451d18d7f",

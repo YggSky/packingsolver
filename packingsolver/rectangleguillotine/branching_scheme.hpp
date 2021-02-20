@@ -72,9 +72,9 @@ public:
     struct Insertion
     {
         /** Id of the item at the bottom of the third-level sub-plate, -1 if none. */
-        ItemTypeId j1 = -1;
+        ItemTypeId j1;
         /** Id of the item at the top of the third-level sub-plate, -1 if none. */
-        ItemTypeId j2 = -1;
+        ItemTypeId j2;
 
         /**
          * Depth of the father in the tree representation of the solution:
@@ -84,28 +84,28 @@ public:
          * * -1: new bin, first stage veritical
          * * -2: new bin, first stage horizontal
          */
-        Depth df = -1;
+        Depth df;
 
         /** Position of the current 1-cut. */
-        Length x1 = 0;
+        Length x1;
         /** Position of the current 2-cut. */
-        Length y2 = 0;
+        Length y2;
         /** Position of the current 3-cut. */
-        Length x3 = 0;
+        Length x3;
 
         /**
          * x1_max_ is the maximum position of the current 1-cut.
          * It is used when otherwise, a 2-cut of the current 1-level sub-plate
          * would intersect a defect.
          */
-        Length x1_max = -1;
+        Length x1_max;
 
         /**
          * y2_max_ is the maximum position of the current 2-cut.
          * It is used when otherwise, a 3-cut of the current 2-level sub-plate
          * would intersect a defect.
          */
-        Length y2_max = -1;
+        Length y2_max;
 
         /**
          * z1_
@@ -113,7 +113,7 @@ public:
          * least the minimum waste.
          * * 1: the width of the last 1-cut can be increased by any value.
          */
-        Counter z1 = 0;
+        Counter z1;
 
         /**
          * z2_
@@ -123,7 +123,7 @@ public:
          * * 2: the height of the last 2-cut cannot be increased (case where it
          * contains of 4-cut with 2 items).
          */
-        Counter z2 = 0;
+        Counter z2;
 
         bool operator==(const Insertion& insertion) const;
         bool operator!=(const Insertion& insertion) const { return !(*this == insertion); }
